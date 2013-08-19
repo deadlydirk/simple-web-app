@@ -104,18 +104,6 @@
 
 	</dependencies>
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>com.jelastic</groupId>
-				<artifactId>jelastic-maven-plugin</artifactId>
-				<version>1.7-SNAPSHOT</version>
-				<configuration>
-					<context>simplewebapp</context>
-					<environment>jenkins</environment>
-					<api_hoster>app.jelastichosting.nl</api_hoster>
-				</configuration>
-			</plugin>
-		</plugins>
 		<pluginManagement>
 			<plugins>
 				<plugin>
