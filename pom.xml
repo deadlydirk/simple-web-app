@@ -113,15 +113,22 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.cloudfoundry</groupId>
-				<artifactId>cf-maven-plugin</artifactId>
-				<version>1.0.0.M4</version>
+				<artifactId>maven-eclipse-plugin</artifactId>
 				<configuration>
-					<server>becapgemini</server>
-					<target>http://api.run.pivotal.io</target>
-					<appname>becapgeminipoc</appname>
-					<url>becapgeminipoc.cfapps.io</url>
-					<memory>256</memory>
+					<ajdtVersion>none</ajdtVersion>
+					<additionalProjectFacets>
+						<jst.java>1.5</jst.java>
+						<jst.web>2.5</jst.web>
+					</additionalProjectFacets>
+					<additionalProjectnatures>
+						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+					</additionalProjectnatures>
+					<additionalBuildcommands>
+						<buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+					</additionalBuildcommands>
+					<wtpversion>1.5</wtpversion>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -140,5 +147,17 @@
 		<finalName>simple-web-app</finalName>
 
 	</build>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>sonatype-oss-public</id>
+			<url>https://oss.sonatype.org/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
 
 </project>
