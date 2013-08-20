@@ -53,15 +53,5 @@
 
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager" />
 
-	<aop:config>
-		<aop:pointcut id="webMethods" expression="execution(* com.capgemini.web.*.*(..))" />
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="webMethods" />
-	</aop:config>
-
-	<tx:advice id="txAdvice" transaction-manager="transactionManager">
-		<tx:attributes>
-			<tx:method name="*" propagation="REQUIRED" />
-		</tx:attributes>
-	</tx:advice>
-
+	<tx:annotation-driven/>
 </beans>

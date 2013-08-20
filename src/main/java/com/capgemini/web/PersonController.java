@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,6 +20,7 @@ public class PersonController {
     @PersistenceContext
     private EntityManager entityManager;
 
+    @Transactional
     @RequestMapping(value = "/addPerson.htm", method = RequestMethod.POST)
     public ModelAndView addPerson(Person p, Errors errors) {
         if (errors.hasErrors()) {
